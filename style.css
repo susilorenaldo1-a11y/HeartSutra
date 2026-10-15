@@ -57,6 +57,25 @@ body {
   margin-top: 4px;
 }
 
+.install-btn {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--gold);
+  color: #2b1d05;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+  transition: transform 0.1s;
+}
+
+.install-btn:active {
+  transform: scale(0.95);
+}
+
 /* Cumulative total */
 .cumulative {
   background: linear-gradient(135deg, var(--surface-2), var(--surface));
