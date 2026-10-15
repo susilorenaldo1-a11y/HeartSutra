@@ -319,6 +319,11 @@ function trackEvent(name, data) {
       window.va('event', { name: name, data: data || {} });
     }
   } catch (e) { /* ignore */ }
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, data || {});
+    }
+  } catch (e) { /* ignore */ }
 }
 
 /* Track launches from the installed app (vs. browser) */
