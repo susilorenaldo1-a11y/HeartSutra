@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Heart Sutra Recitation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>摩訶般若波羅蜜多心經</h1>
+      <p class="subtitle">Heart Sutra Recitation</p>
+    </header>
+
+    <section class="cumulative">
+      <span class="cumulative-label">All-time Recitations</span>
+      <span class="cumulative-value" id="cumulativeTotal">0</span>
+    </section>
+
+    <section class="counter">
+      <button class="tap-btn" id="tapBtn" aria-label="Tap to count recitation">
+        <span class="tap-count" id="tapCount">0</span>
+        <span class="tap-hint">Tap to count</span>
+      </button>
+      <div class="counter-actions">
+        <button class="action-btn" id="undoBtn" title="Undo last tap">↺ Undo</button>
+        <button class="action-btn" id="resetSessionBtn" title="Reset current session">Reset</button>
+      </div>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-lang="zh">Hanzi</button>
+      <button class="tab" data-lang="py">Pinyin</button>
+      <button class="tab" data-lang="id">Indonesian</button>
+    </nav>
+
+    <section class="sutra">
+      <h2 id="sutraTitle" class="sutra-title"></h2>
+      <div id="sutraBody" class="sutra-body"></div>
+    </section>
+
+    <footer class="footer">
+      <button class="footer-btn" id="saveSessionBtn">Save Session</button>
+      <button class="footer-btn" id="viewLogBtn">Session Log</button>
+    </footer>
+  </div>
+
+  <!-- Session Log Modal -->
+  <div class="modal" id="logModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Session Log</h2>
+        <button class="close-btn" id="closeLogBtn">✕</button>
+      </div>
+      <div class="modal-body" id="logList"></div>
+      <div class="modal-foot">
+        <button class="footer-btn danger" id="clearLogBtn">Clear All</button>
+        <button class="footer-btn" id="closeLogBtn2">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Save Session Modal -->
+  <div class="modal" id="saveModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Save Session</h2>
+        <button class="close-btn" id="closeSaveBtn">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="save-summary">This session: <strong id="saveCount">0</strong> recitations</p>
+        <textarea id="noteInput" placeholder="Optional note..." rows="4"></textarea>
+      </div>
+      <div class="modal-foot">
+        <button class="footer-btn" id="cancelSaveBtn">Cancel</button>
+        <button class="footer-btn primary" id="confirmSaveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
