@@ -1,4 +1,4 @@
-const CACHE_NAME = 'heart-sutra-v1';
+const CACHE_NAME = 'heart-sutra-v2';
 const ASSETS = [
   './',
   './index.html',

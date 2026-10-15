@@ -303,10 +303,25 @@ installBtn.addEventListener('click', async () => {
 
 window.addEventListener('appinstalled', () => {
   installBtn.style.display = 'none';
+  trackEvent('pwa_install');
 });
 
 /* Show install hint on iOS (Safari does not fire beforeinstallprompt) */
 if (isIOS() && !isStandalone()) {
   installBtn.textContent = '⬇ Install App';
   installBtn.style.display = 'inline-block';
+}
+
+/* Analytics helpers */
+function trackEvent(name, data) {
+  try {
+    if (typeof window.va === 'function') {
+      window.va('event', { name: name, data: data || {} });
+    }
+  } catch (e) { /* ignore */ }
+}
+
+/* Track launches from the installed app (vs. browser) */
+if (isStandalone()) {
+  trackEvent('app_launch');
 }
