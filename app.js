@@ -284,7 +284,7 @@ function isStandalone() {
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  installBtn.textContent = '⬇ Create Shortcut';
+  installBtn.textContent = '⬇ Add to Homescreen';
   installBtn.style.display = 'inline-block';
 });
 
@@ -308,7 +308,7 @@ window.addEventListener('appinstalled', () => {
 
 /* Show install hint on iOS (Safari does not fire beforeinstallprompt) */
 if (isIOS() && !isStandalone()) {
-  installBtn.textContent = '⬇ Create Shortcut';
+  installBtn.textContent = '⬇ Add to Homescreen';
   installBtn.style.display = 'inline-block';
 }
 
